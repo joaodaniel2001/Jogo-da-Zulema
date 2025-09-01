@@ -1,39 +1,111 @@
-// Entrada do teclado
-mov_direita = keyboard_check(ord("D")) || keyboard_check(vk_right);
-mov_esquerda = keyboard_check(ord("A")) || keyboard_check(vk_left);
-mov_cima = keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_up);
 
+// Pegando os INPUTS
+getControls();
 
-// Movimento horizontal
-hveloc = (mov_direita - mov_esquerda) * veloc;
+// Movimentação X
 
-// Aplicar gravidade
-if (!place_meeting(x, y + 1, obj_parede)) {
-    vveloc += gravidade;
-} else {
-    // Está no chão
-    vveloc = 0;
-    
-    // Pulo
-    if (mov_cima) {
-        vveloc = -2.8;
-    }
-}
+	// Direção
+	moveDir = right_key - left_key;
 
-// Colisão horizontal
-if (place_meeting(x + hveloc, y, obj_parede)) {
-    while (!place_meeting(x + sign(hveloc), y, obj_parede)) {
-        x += sign(hveloc);
-    }
-    hveloc = 0;
-}
-x += hveloc;
+	// Pegando a xspd
+	xspd = moveDir * moveSpd;
 
-// Colisão vertical
-if (place_meeting(x, y + vveloc, obj_parede)) {
-    while (!place_meeting(x, y + sign(vveloc), obj_parede)) {
-        y += sign(vveloc);
-    }
-    vveloc = 0;
-}
-y += vveloc;
+	// Colisão X
+	var _subPixel = .5;
+	if place_meeting(x + xspd, y, obj_parede)
+		{
+			// Precissão
+			var _pixelCheck = _subPixel * sign(xspd);
+			while !place_meeting(x + _pixelCheck, y, obj_parede)
+				{
+					x += _pixelCheck;
+				}
+			
+			// Colocando o xspd para zero ao colidir
+			xspd = 0;
+		}
+
+	// Movimentação
+	x += xspd;
+
+// Movimentação Y
+
+	// Gravidade
+	yspd += grav;
+	
+	// Resetando as variaveis de pulo
+	if onGround
+		{
+			jump_count = 0;
+			jump_hold_timer = 0;
+		} else {
+			// Se o player está no ar, tirar o pulo extra
+			if jump_count == 0 {jump_count = 1;};
+		}
+		
+	// Iniciando o pulo
+	if jump_key_buffered && jump_count < jump_max
+		{
+			// Resetando o Buffer
+			jump_key_buffered = false;
+			jump_key_buffered_timer = 0;
+			
+			// Aumentando o número de pulos
+			jump_count ++;
+			
+			// Colocando o hold timer do pulo
+			jump_hold_timer = jump_hold_frames[jump_count - 1];
+		}
+	
+	// Tirando o pulo
+	if !jump_key
+		{
+			jump_hold_timer = 0;
+		}
+	
+	// Pulo baseado no timer/holding do botão
+	if jump_hold_timer > 0
+		{
+			// Constantemente colocando o yspd para ser a velocidade do pulo
+			yspd = jspd[jump_count - 1];
+			
+			// Diminundo o timer
+			jump_hold_timer --;
+		}
+		
+	// Colissão Y e Movimento
+	
+	// Cap falling speed
+	if yspd > termVel { yspd = termVel; };
+		
+	// Colisão
+	var _subPixel = .5;
+	if place_meeting(x, y + yspd, obj_parede)
+		{
+			// Precissão
+			var _pixelCheck = _subPixel * sign(yspd);
+			while !place_meeting(x, y + _pixelCheck, obj_parede)
+				{
+					y += _pixelCheck;
+				};
+			
+			// Bonk code
+			if yspd < 0
+				{
+				jump_hold_timer = 0;
+				}
+			
+			// Colocar o yspd para zero ao colidir
+			yspd = 0;
+		}
+		
+	// Verificando se estou no chão
+	if yspd >= 0 && place_meeting(x, y + 1, obj_parede)
+		{
+			onGround = true;
+		} else {
+			onGround = false;
+		}
+	
+	y += yspd;
+	
