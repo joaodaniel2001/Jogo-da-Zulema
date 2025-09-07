@@ -23,6 +23,9 @@ function getControls ()
 		jump_key = (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_up)) + gamepad_button_check(0, gp_face1);
 			jump_key = clamp(jump_key, 0, 1);
 			
+		run_key = keyboard_check(vk_shift) + gamepad_button_check(0, gp_face3);
+			run_key = clamp (run_key, 0, 1)
+			
 		// Jump Key Buffering
 		if jump_key_pressed
 			{
