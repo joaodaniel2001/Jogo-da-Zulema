@@ -69,6 +69,7 @@ switch(_text_id)
 			    scr_text("Ele incentivou a participacao de todas as familias, ajudando a comunidade a se unir em torno da construcao da igreja.", "vinicius", -1);
 			    scr_text("A paróquia Nossa Senhora do Rosário foi oficialmente fundada em 15 de agosto de 1952, simbolizando a fe e a uniao dos moradores.", "vinicius", -1);
 			    scr_text("Todo o processo contou com muito trabalho coletivo e dedicacao de todos.", "vinicius", -1);
+			    scr_text("Obrigado por jogar! Por enquanto é isso!!!", "player");
 
 			    break;
 
