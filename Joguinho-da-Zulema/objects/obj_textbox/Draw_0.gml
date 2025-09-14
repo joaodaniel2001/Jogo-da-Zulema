@@ -94,7 +94,7 @@ if text_pause_timer <= 0
         if _check_char == "." || _check_char == "?" || _check_char == "!" || _check_char == ","
         {
             text_pause_timer = text_pause_time
-            if !audio_is_playing(snd[page]) {audio_play_sound(snd[page], 8, false)}
+            if !audio_is_playing(snd[page]) {audio_play_sound(snd[page], 16, false)}
         }
         else
         {

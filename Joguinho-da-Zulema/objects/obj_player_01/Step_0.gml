@@ -136,22 +136,33 @@ getControls();
 		// Colocando a colisão
 		mask_index = maskSpr;
 
-// Iniciando ataque ao apertar J
-if (keyboard_check_pressed(ord("J")) && !isAttacking)
+if place_meeting(x, y, obj_reset)
+	{
+		room_restart();
+	}
+
+if (keyboard_check_pressed(ord("R")))
 {
-    isAttacking = true;
-    attack_timer = attack_duration;
+    game_restart();
 }
 
-// Atualizando sprite de ataque
-if (isAttacking)
-{
-    sprite_index = attackSpr;
-    mask_index = maskSpr; // mantém a mesma colisão
+#region // Combate
 
-    attack_timer--;
-    if (attack_timer <= 0)
-    {
-        isAttacking = false;
-    }
+if alarm[0] > 0
+	{
+	if image_alpha >= 1{
+		alfa_hit = -0.05;
+	}else if image_alpha <= 0{
+		alfa_hit = 0.05;
+	}
+	image_alpha += alfa_hit;
+}else{
+	image_alpha = 1;
 }
+
+#endregion
+
+if vida = 0
+	{	
+		room_restart()
+	}

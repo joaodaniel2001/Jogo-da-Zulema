@@ -17,6 +17,9 @@ function setOnGround(_val = true)
 // Control setup
 controlsSetup();
 
+// Itens
+madeira = 0;
+
 // Sprites
 maskSpr = sPlayer_idle;
 
@@ -56,8 +59,9 @@ jump_hold_timer = 0;
 		coyote_jump_frames = 20;
 		coyote_jump_timer = 0;
 
-// Ataque
-isAttacking = false;
-attack_timer = 0;
-attack_duration = 15; // duração do ataque em steps
-attackSpr = sPlayer_attack;
+// Combate
+vida = 3;
+alfa_hit = 0;
+alarm[0] = 0; 
+inv_tempo = 180;
+

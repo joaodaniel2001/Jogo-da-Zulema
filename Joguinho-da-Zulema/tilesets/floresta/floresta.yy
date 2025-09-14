@@ -8,7 +8,7 @@
     "TileSerialiseData":[],
   },
   "name":"floresta",
-  "out_columns":15,
+  "out_columns":7,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -18,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"sFloresta",
-    "path":"sprites/sFloresta/sFloresta.yy",
+    "name":"sGround_1",
+    "path":"sprites/sGround_1/sGround_1.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
@@ -34,5 +34,5 @@
   "tileWidth":16,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":240,
+  "tile_count":48,
 }

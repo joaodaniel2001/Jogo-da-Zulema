@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_game_text",
   "parent":{
-    "name":"Dialogue System",
-    "path":"folders/Dialogue System.yy",
+    "name":"Scripts",
+    "path":"folders/Dialogue System/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -65,10 +65,10 @@ function scr_text(_text){
 			switch (argument[1])
 			{
 				// Homem velho
-				case "homem velho":
-					speaker_sprite[page_number] = spr_oldman_spk;
+				case "player":
+					speaker_sprite[page_number] = spr_player_spk;
 					txtb_spr[page_number] = spr_textbox;
-					snd[page_number] = snd_voice_low 
+					snd[page_number] = snd_voice_medium
 					break;
 					
 				// Vinicius
@@ -76,7 +76,22 @@ function scr_text(_text){
 					speaker_sprite[page_number] = spr_vinicius_spk;
 					txtb_spr[page_number] = spr_textbox_blue;
 					speaker_side[page_number] = -1;
-					snd[page_number] = snd_voice_medium
+					snd[page_number] = snd_voice_low
+					break;
+					
+					case "vinicius feliz":
+						speaker_sprite[page_number] = spr_vinicius_happy;
+						txtb_spr[page_number] = spr_textbox_blue;
+						speaker_side[page_number] = -1;
+						snd[page_number] = snd_voice_low
+						break;
+			
+				// Zick
+				case "zick":
+					speaker_sprite[page_number] = spr_zick_spk;
+					txtb_spr[page_number] = spr_textbox_blue;
+					speaker_side[page_number] = -1;
+					snd[page_number] = snd_voice_female
 					break;
 			
 			}

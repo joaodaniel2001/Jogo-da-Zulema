@@ -45,8 +45,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"Dialogue System",
-    "path":"folders/Dialogue System.yy",
+    "name":"Retrato",
+    "path":"folders/Dialogue System/Retrato.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

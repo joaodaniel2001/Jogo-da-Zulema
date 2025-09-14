@@ -32,7 +32,7 @@ option_number = 0;
 setup = false;
 
 // Som
-snd_delay = 4;
+snd_delay = 40;
 snd_count = snd_delay;
 
 // Efeitos
