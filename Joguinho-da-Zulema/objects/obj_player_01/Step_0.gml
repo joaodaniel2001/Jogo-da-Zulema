@@ -135,3 +135,23 @@ getControls();
 	
 		// Colocando a colisão
 		mask_index = maskSpr;
+
+// Iniciando ataque ao apertar J
+if (keyboard_check_pressed(ord("J")) && !isAttacking)
+{
+    isAttacking = true;
+    attack_timer = attack_duration;
+}
+
+// Atualizando sprite de ataque
+if (isAttacking)
+{
+    sprite_index = attackSpr;
+    mask_index = maskSpr; // mantém a mesma colisão
+
+    attack_timer--;
+    if (attack_timer <= 0)
+    {
+        isAttacking = false;
+    }
+}

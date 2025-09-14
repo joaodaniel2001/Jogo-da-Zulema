@@ -6,7 +6,9 @@ switch(_text_id)
 			scr_text("Opa! Sou apenas um cara tranquilo. Tu me entende, correto? Bem. Tu. Me. Entende... Certo?", "homem velho");
 				src_text_color(19, 32, c_red, c_red, c_red, c_red);
 				scr_text_shake(19, 32);
-			scr_text("Oi, tudo bem?", "vinicius", -1);
+			scr_text("Oi, tudo bem? Sou o Vinicius, vulgo wini", "vinicius", -1);
+				src_text_color(36, 40, c_yellow, c_yellow, c_white, c_white)
+				scr_text_float(36, 40)
 			scr_text("Tudo, voce gosta do Mister?", "homem velho");
 				scr_option("Sim", "npc 1 - sim");
 				scr_option("Eca, que nojo", "npc 1 - nao");

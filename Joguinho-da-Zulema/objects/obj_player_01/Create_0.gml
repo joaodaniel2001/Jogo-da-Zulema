@@ -18,12 +18,12 @@ function setOnGround(_val = true)
 controlsSetup();
 
 // Sprites
-maskSpr = spr_player_idle;
+maskSpr = sPlayer_idle;
 
-idleSpr = spr_player_idle;
-walkSpr = spr_player_andando;
-runSpr = spr_player_correndo;
-jumpSpr = spr_player_pulo;
+idleSpr = sPlayer_idle;
+walkSpr = sPlayer_walk;
+runSpr = sPlayer_run;
+jumpSpr = sPlayer_jump;
 
 // Movimentação
 face = 1;
@@ -55,3 +55,9 @@ jump_hold_timer = 0;
 		// Tempo do buffer do pulo
 		coyote_jump_frames = 20;
 		coyote_jump_timer = 0;
+
+// Ataque
+isAttacking = false;
+attack_timer = 0;
+attack_duration = 15; // duração do ataque em steps
+attackSpr = sPlayer_attack;
