@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_voice_medium",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.033378683,
+  "name":"snd_voice_medium",
+  "parent":{
+    "name":"Vozes",
+    "path":"folders/Dialogue System/Vozes.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_voice_medium.wav",
+  "type":0,
+  "volume":1.0,
+}

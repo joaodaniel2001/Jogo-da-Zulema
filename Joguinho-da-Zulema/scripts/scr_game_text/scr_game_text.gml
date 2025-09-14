@@ -3,15 +3,19 @@ function scr_game_text(_text_id){
 switch(_text_id) 
 	{
 		case "npc 1":
-			scr_text("Olá! Sou o NPC 01.");
-				scr_option("Yeah", "npc 1 - sim");
-				scr_option("Nah", "npc 1 - nao");
+			scr_text("Opa! Sou apenas um cara tranquilo. Tu me entende, correto? Bem. Tu. Me. Entende... Certo?", "homem velho");
+				src_text_color(19, 32, c_red, c_red, c_red, c_red);
+				scr_text_shake(19, 32);
+			scr_text("Oi, tudo bem?", "vinicius", -1);
+			scr_text("Tudo, voce gosta do Mister?", "homem velho");
+				scr_option("Sim", "npc 1 - sim");
+				scr_option("Eca, que nojo", "npc 1 - nao");
 			break
 			case "npc 1 - sim":
-				scr_text("Sim! Na festa do Carlinhos Maia")
+				scr_text("Eu tambem gosto dele!", "homem velho")
 				break;
 			case "npc 1 - nao":
-				scr_text("No! Passo bem solto passo bem solto");
+				scr_text("Como!!!!! Saia agora!!!", "homem velho");
 				break;
 	
 		case "npc 2":
