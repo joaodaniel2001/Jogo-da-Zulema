@@ -18,7 +18,9 @@ function setOnGround(_val = true)
 controlsSetup();
 
 // Itens
-madeira = 0;
+global.madeira = 0;
+global.pedra = 0;
+global.gold = 0;
 
 // Sprites
 maskSpr = sPlayer_idle;

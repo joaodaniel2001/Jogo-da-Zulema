@@ -1,3 +1,3 @@
 
-global.madeira += 1;
+global.pedra += 1;
 instance_destroy(other);
